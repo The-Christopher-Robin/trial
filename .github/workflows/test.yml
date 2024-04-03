@@ -28,3 +28,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a Python script
         run: python .github/workflows/example.py
+
+      - name: Build and push docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+            image: The-Christopher-Robin/trial
+            registry: docker.io
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
