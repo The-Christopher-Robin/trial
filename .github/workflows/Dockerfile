@@ -1,4 +1,5 @@
-# Basic nginx dockerfile starting with Ubuntu 20.04
-FROM ubuntu:20.04
-RUN apt-get -y update
-RUN apt-get -y install nginx
+FROM openjdk:8-jre-alpine
+
+EXPOSE 8080
+
+COPY .github/workflows/example.py /usr/app/
